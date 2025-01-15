@@ -16,5 +16,34 @@ profinet is a communication protocol that lives at layer seven of the ISO/OSI mo
 1. Physical layer
 
 profinet can do TCP/IP and UDP/IP based communication for non time critical task, such as configuration and parameterization.
-due to the potential latency and delays associated with IP based communication
+due to the potential latency and delays associated with IP based communication this method is unsuitable for time-critical tasks.
+profinet employs a real time channel to deliver data in a fast and deterministic fashion for time-critical applications.
+
+all ethernet frames have a field called an etheType, which indicated the kind of data encapsulated inside. PROFINET real-time communication is set to have an EtherType of 8892
+upon arrival at a PROFINET station, the data is directed to the application immeditiely.(The profinet data goes directly from ethernet layer 2, to the applicatio layer 7. It skips the TCP/Ip layers entirely and avoids the variable time
+it could take to be processed as such. Thus, communication speed and determinism imporve significantly.
+
+Expected cycle times: 512ms to 250micro seconds can be achieved.
+No special hardware or configuration is required. Included in all PROFINET components.
+
+PROFINET Isochronous real time:
+eliminated the variable data delay. by creating rules used to switch ethernet traffic and creating special rules for PROFINET traffic
+enhanced rules:
+Bandwidth reservation
+scheduling
+synchronization
+
+allows cycyle time down to 31.25 microseconds and up to 1 microseconds of expected delays, also known as jitters.
+PROFINET IRT is optional and only required  in specific high performance application.
+
+Be strategic when choosing the controller, as the engineering tool you will use to configure the whole network is determined by the controller.
+cables, connectors, and switched need not to be specialized for PROFINET. You can emply standard ethernet cables to build the network.
+however, industially graded cables are the default for most installations, as usign standard ethernet cable in challenging envieronment can cause many issues.
+commercially ethernet cables are not industrially graded, they break and damange and can ultimately compromise the network infrastructure and signal quality.
+
+the most common connector type for Profinet is RJ45. M12 is also used in high expose environments
+we can implement variety of topology line, star,tree,and ring. can be achieved by dediated switched or 2 port device.
+
+PROFINET is compatiable with copper and fiver optic wired media and wireless via bluetooth or WIFI
+
 
