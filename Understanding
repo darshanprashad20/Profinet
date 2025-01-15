@@ -1,1 +1,20 @@
+PROFINET
+Profinet is an open industrial ethernet solution based on international standards(IEC 61158). 
+used to communicate between device and controllers for automation
+Profinet is an openstandard.
+Profinet defines cyclic and acyclic communication between components, including diagnostics, functional safety, alarms and additional information.
+to link all those components profinet employs standard unmodified ethernet for its communicatoin medium.
+high speed and deterministic messages. Deterministic communication means delivering message exactly when they are expected
+
+profinet is a communication protocol that lives at layer seven of the ISO/OSI model.
+7. Application layer
+6. Presentation layer
+5. session layer
+4. Transport layer
+3. Network layer
+2. Data link layer 
+1. Physical layer
+
+profinet can do TCP/IP and UDP/IP based communication for non time critical task, such as configuration and parameterization.
+due to the potential latency and delays associated with IP based communication
 
