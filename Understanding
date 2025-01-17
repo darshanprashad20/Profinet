@@ -1,4 +1,4 @@
-PROFINET
+***PROFINET***
 Profinet is an open industrial ethernet solution based on international standards(IEC 61158). 
 used to communicate between device and controllers for automation
 Profinet is an openstandard.
@@ -44,6 +44,21 @@ commercially ethernet cables are not industrially graded, they break and damange
 the most common connector type for Profinet is RJ45. M12 is also used in high expose environments
 we can implement variety of topology line, star,tree,and ring. can be achieved by dediated switched or 2 port device.
 
-PROFINET is compatiable with copper and fiver optic wired media and wireless via bluetooth or WIFI
+PROFINET is compatiable with copper and fiver optic wired media and wireless via bluetooth or WIFI.
 
+Connecting to and fetching data from devices that use the PROFINET protocol for communication can be challenging because PROFINET is primarily designed for deterministic industrial
+communication and often relies on proprietary or hardware-specific implementations.
 
+. Use Vendor-Specific APIs or SDKs
+
+    Most PROFINET device manufacturers (e.g., Siemens, Beckhoff) provide their own SDKs or APIs for communication.
+    These SDKs often include libraries, utilities, or examples to interact with their devices using the PROFINET protocol.
+
+Check the vendor's website or device documentation for SDKs or software tools.
+Install the SDK and configure your development environment.
+Use Python bindings (if provided) or call the SDK functions using a wrapper (e.g., ctypes or Cython).
+
+2. Use a Gateway or Converter
+
+    PROFINET-to-Other Protocol Converters:
+        Devices like gateways can convert PROFINET communication to protocols like OPC-UA, Modbus TCP, or MQTT, which can be easily accessed using Python libraries.
