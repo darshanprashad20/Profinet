@@ -64,7 +64,7 @@ Use Python bindings (if provided) or call the SDK functions using a wrapper (e.g
         Devices like gateways can convert PROFINET communication to protocols like OPC-UA, Modbus TCP, or MQTT, which can be easily accessed using Python libraries.
 
 generally,
-Purple cable: profibus cable. Also called RS485
+Purple cable or greeen: profibus cable. Also called RS485
 Blue cable: profinet cable. Also called CAP-6 cable or Lan cable or RJ45
 
 There are two types of profibus cables. Profibus DP and profibus PA
@@ -74,3 +74,19 @@ profibus maximum cable length we can use is 1000meter.
 
 profinet cable speed more than profibus cables.
 cable lenth is 100 meter
+
+******************************************************************Libraries USED in python**************************************************************************
+Pnio_dcp:
+The pnio_dcp library you shared is specifically designed for Discovery and Configuration Protocol (DCP) operations in Profinet, including identifying devices, configuring IP settings, resetting to factory settings,
+and other related tasks. However, it does not implement full Profinet IO communication, which involves real-time data exchange with devices (such as cyclic input/output data exchange with PLCs or devices
+
+Step 1: Use pnio_dcp for Discovery and Configuration
+Master Code to Discover Devices and Configure IP
+
+You can use the pnio_dcp library to:
+
+    Discover devices on the network.
+    Set or retrieve their IP addresses and names of stations.
+    Reset them to factory settings.
+LINK: https://pypi.org/project/pnio-dcp/
+python-snap7:
