@@ -1,3 +1,28 @@
 
 Profinet is an industrial Ethernet protocol designed for real-time communication in automation systems.
 It primarily operates at the Data Link Layer (Layer 2) and Application Layer (Layer 7) of the OSI model, with specific characteristics that allow it to support real-time and deterministic communication.
+
+When we say Profinet operates at Layer 2 of the OSI model, it means that the communication between devices in a Profinet network primarily occurs at the Data Link Layer (Layer 2),
+which is below the Network Layer (Layer 3) of the OSI model.
+
+Profinet and Layer 2 Communication
+
+Profinet, the industrial Ethernet protocol for automation, uses Ethernet (Layer 2) for communication, which allows it to bypass higher-level IP protocols. Here’s what this means in the context of Profinet:
+
+    Direct Communication via Ethernet Frames:
+        Profinet devices communicate directly using Ethernet frames, which contain the MAC addresses of the sender and receiver. This means Profinet does not rely on the Network Layer (Layer 3) and the IP protocol for basic communication.
+        Devices on the same local network (LAN) can communicate with each other using Ethernet frames without needing to use IP addresses, which would be required if communication were taking place over different networks or subnetworks.
+
+    Bypassing IP:
+        In typical IP-based communication (e.g., HTTP or TCP/IP), IP addresses are used to route packets between different devices and networks. However, Profinet uses Ethernet MAC addresses to directly identify devices in the local network. As a result, Profinet devices don't rely on Layer 3 protocols like IP for device discovery or initial configuration.
+        This design reduces the overhead associated with IP-based communication, making Profinet more efficient for real-time and time-sensitive industrial automation applications, where minimizing latency and overhead is critical.
+
+    Profinet's Operation at Layer 2:
+        DCP (Discovery and Configuration Protocol): This is a key protocol in Profinet that works at Layer 2. It is used during the initial phase of the Profinet device's operation to discover devices and configure network parameters (like the device's name and IP address). DCP sends Ethernet frames that contain requests to all devices in the network to identify themselves.
+        Since DCP operates at Layer 2, it can send broadcast messages over the network, which are received by all devices. Devices respond with information like their MAC address, name, and IP address.
+
+    Real-Time Communication:
+        Profinet can also use real-time (RT) and Isochronous Real-Time (IRT) communication, which requires very low latency. These real-time communications are handled over Ethernet frames, with precise timing and synchronization, ensuring critical data (like control signals) is exchanged between devices without delays. Layer 2 allows these communications to happen with minimal overhead compared to IP-based communication.
+
+    Reduced Complexity:
+        By operating at Layer 2, Profinet can simplify the network configuration and reduce the need for complex routing decisions. All devices can communicate with each other directly using MAC addresses, and there’s no need to worry about IP address management or routing protocols for local network communication.
