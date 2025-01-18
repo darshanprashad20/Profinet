@@ -4,12 +4,14 @@ https://profinetcommander.com/installation/?utm_source=chatgpt.com
 profinet-python
 https://github.com/M256-Automation/profinet-python?utm_source=chatgpt.com
 
-PROFI-DCP
+
+**********************************************LIBRARIES*****************************************************
+PROFI-DCP:
 https://pypi.org/project/profi-dcp/?utm_source=chatgpt.com
 
-
-pnio-dcp
+pnio-dcp:
 https://gitlab.com/pyshacks/pnio_dcp
+https://pypi.org/project/pnio-dcp/
 
 profitnet
 https://profinetuniversity.com/profinet-basics/profinet-communication-channels/
