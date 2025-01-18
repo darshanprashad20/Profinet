@@ -62,3 +62,15 @@ Use Python bindings (if provided) or call the SDK functions using a wrapper (e.g
 
     PROFINET-to-Other Protocol Converters:
         Devices like gateways can convert PROFINET communication to protocols like OPC-UA, Modbus TCP, or MQTT, which can be easily accessed using Python libraries.
+
+generally,
+Purple cable: profibus cable. Also called RS485
+Blue cable: profinet cable. Also called CAP-6 cable or Lan cable or RJ45
+
+There are two types of profibus cables. Profibus DP and profibus PA
+profibus means process field bus.
+DP means decentralized peripheral and PA means process automation.
+profibus maximum cable length we can use is 1000meter.
+
+profinet cable speed more than profibus cables.
+cable lenth is 100 meter
