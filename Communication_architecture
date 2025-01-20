@@ -93,3 +93,61 @@ Summary:
     IP addresses are used when Profinet devices need to communicate across different networks or subnets (Layer 3).
 
 Thus, even without IP or routing, devices can find and communicate with each other in Layer 2 communication using MAC addresses and Ethernet frames.
+
+1. Layer 2 is Limited to Local Networks
+
+Layer 2 communication (based on MAC addresses and Ethernet frames):
+
+    Does not support communication across different networks (subnets).
+    Devices on one local network cannot directly communicate with devices on another network because MAC addresses are only meaningful within a single LAN.
+    No routing capability: Layer 2 cannot decide how to forward data beyond the local network.
+
+Higher layers, especially Layer 3 (Network Layer), introduce:
+
+    IP addresses that provide unique identifiers across networks.
+    Routing protocols to determine the best path for data to travel between distant networks.
+
+Without these, devices on separate subnets or networks would be isolated.
+
+2. Lack of End-to-End Communication in Layer 2
+
+In Layer 2:
+
+    Communication is limited to devices that are physically connected or part of the same LAN segment.
+    There’s no mechanism to ensure data delivery over complex, multi-hop paths.
+
+Higher layers (e.g., Layer 4 - Transport Layer) provide:
+
+    Reliable delivery mechanisms (e.g., TCP) to ensure data arrives correctly, even over long distances or lossy networks.
+    Error recovery and retransmission in case of packet loss.
+
+5. Lack of Security and Data Integrity
+
+Layer 2 communication:
+
+    Lacks encryption: Data in Ethernet frames can be intercepted and read by any device on the same LAN.
+    Lacks authentication: There’s no way to verify that the sender or receiver is legitimate.
+
+Higher layers add:
+
+    Encryption (TLS, SSL) at Layer 6/7 to protect data during transmission.
+    Authentication and Authorization at Layer 7 to ensure only trusted parties can communicate.
+
+6. No Port-Based Communication in Layer 2
+
+Layer 2 communication does not distinguish between different applications running on the same device. For example:
+
+    If two applications on the same device want to communicate, Layer 2 cannot differentiate between their traffic.
+
+Layer 4 introduces:
+
+    Ports to identify different applications or services (e.g., port 80 for HTTP, port 443 for HTTPS).
+    Multiplexing to handle multiple communication streams simultaneously.
+
+4. Why Doesn’t Profinet Use Higher OSI Layers?
+
+Profinet avoids higher OSI layers (Layer 3 and above) to achieve:
+
+    Deterministic communication: Critical for real-time control in industrial environments.
+    Low latency: Higher layers introduce additional overhead, which increases delays.
+    Simplicity: Layer 2 communication is sufficient for many industrial automation tasks, where devices are usually located on the same local network.
